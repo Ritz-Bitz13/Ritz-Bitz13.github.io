@@ -151,10 +151,10 @@
             LoadLink("about");
         });
     
-        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
-        $("main").append(`<article>
-        <p id="ArticleParagraph" class ="mt-3">This is the Article Paragraph</p>
-        </article>`);
+        //$("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
+        //$("main").append(`<article>
+        //<p id="ArticleParagraph" class ="mt-3">This is the Article Paragraph</p>
+        //</article>`);
     }
 
     function DisplayProductsPage(): void
@@ -391,7 +391,13 @@
         // if user is logged in
         if(sessionStorage.getItem("user"))
         {
+            $("#task-list").html(
+                `<a id="task" class="nav-link" data="task-list"><i class="fas fa-list"></i> Task List</a>`
+            );
+            // swap out the login link for logout
 
+
+            AddNavigationEvents();
 
             $("#login").html(
                 `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
@@ -405,6 +411,9 @@
 
                 $("#login").html(
                     `<a class="nav-link" data="login"><i class="fas fa-sign-in-alt"></i> Login</a>`
+                );
+                $("#task-list").html(
+                    `<a id="task-list" class="nav-link" href="#"></a>`
                 );
 
                 AddNavigationEvents();
