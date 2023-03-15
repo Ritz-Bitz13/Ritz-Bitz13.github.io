@@ -41,7 +41,6 @@
 
         $(`li>a:contains(${document.title})`).addClass("active"); // updates the Active link on Navigation items
 
-        CheckLogin();
 
         LoadContent();
     }
@@ -96,12 +95,7 @@
         });
     }
 
-    /**
-     * This function loads the header.html content into a page
-     *
-     * @returns {void}
-     */
-    function LoadHeader(): void
+    function LoadHeader() : void
     {
         // use AJAX to load the header content
         $.get("./Views/components/header.html", function(html_data)
@@ -115,11 +109,6 @@
         });
     }
 
-    /**
-     * 
-     * 
-     * @returns {void}
-     */
     function LoadContent(): void
     {
         let page_name = router.ActiveLink; // alias for the Active Link
@@ -151,10 +140,10 @@
             LoadLink("about");
         });
     
-        //$("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
-        //$("main").append(`<article>
-        //<p id="ArticleParagraph" class ="mt-3">This is the Article Paragraph</p>
-        //</article>`);
+        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
+        $("main").append(`<article>
+        <p id="ArticleParagraph" class ="mt-3">This is the Article Paragraph</p>
+        </article>`);
     }
 
     function DisplayProductsPage(): void
@@ -635,6 +624,6 @@
         LoadFooter();
     }
 
-    window.addEventListener("load", Start);
+    window.addEventListener("load", Start)
 
 })();
