@@ -103,9 +103,9 @@
             // inject Header content into the page
             $("header").html(html_data);
 
-            AddNavigationEvents();
+            //AddNavigationEvents();
             
-            CheckLogin();
+            //CheckLogin();
         });
     }
 
